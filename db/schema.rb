@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160426193800) do
+ActiveRecord::Schema.define(version: 20160426210037) do
 
   create_table "children", force: :cascade do |t|
     t.string   "name"
@@ -25,11 +25,15 @@ ActiveRecord::Schema.define(version: 20160426193800) do
 
   create_table "fathers", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "cpf"
     t.string   "email"
     t.integer  "occupation_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "fathers", ["occupation_id"], name: "index_fathers_on_occupation_id"

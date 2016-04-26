@@ -3,13 +3,14 @@
 <p>
   <strong>Name:</strong>
   <%= "#{@father.name} - #{@father.cpf} - #{@father.email} - #{@father.occupations_description}" %>
+</p>
+<%= image_tag @father.avatar.url(:medium) %>
   <hr>
   <ul>
 	<% @father.children.each do |child| %>
 	<li><%= "#{child.name} - #{pegar_sexo(child.sex)}" %></li>
 	<% end %>
   </ul>
-</p>
 
 <%= link_to 'Edit', edit_father_path(@father) %> |
 <%= link_to 'Back', fathers_path %>
