@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @father.name %>
+  <%= "#{@father.name} - #{@father.cpf} - #{@father.email} - #{@father.occupation.description}" %>
   <hr>
   <ul>
 	<% @father.children.each do |child| %>

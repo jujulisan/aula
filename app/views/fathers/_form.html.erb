@@ -15,6 +15,18 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :cpf %><br>
+    <%= f.text_field :cpf %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+    <div class="field">
+    <%= f.label :occupation_id %><br>
+    <%= f.collection_select(:occupation_id, @occupations, :id, :description, include_blank: "Selecione")%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

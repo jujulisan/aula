@@ -1,6 +1,6 @@
 class FathersController < ApplicationController
   before_action :set_father, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_occupations, only: [:edit, :create, :update]
   # GET /fathers
   # GET /fathers.json
   def index
@@ -69,6 +69,10 @@ class FathersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def father_params
-      params.require(:father).permit(:name)
+      params.require(:father).permit(:name, :cpf, :email, :occupation_id)
+    end
+
+    def set_occupations
+      @occupations = Occupation.all
     end
 end

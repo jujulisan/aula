@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :occupations
   resources :children
   resources :fathers
   # The priority is based upon order of creation: first created -> highest priority.
